@@ -52,6 +52,11 @@ html {
     text-shadow: 2px 2px 0px #000, -2px 2px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000;
     transition: all .2s ease-in-out;
   }
+
+    #reset:hover {
+    transition: all 1s ease-in-out;
+    animation: scale 1s 10;
+  }
   
   button {
     background-color: transparent;
@@ -117,4 +122,9 @@ html {
   @keyframes spin {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
+  }
+
+  @keyframes scale {
+    0% {transform: scale(1.5)};
+    100% {transform: scale(1.0)};
   }
