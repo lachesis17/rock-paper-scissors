@@ -25,19 +25,19 @@ rock.onclick = () => {
   compGuess = guess();
     if (compGuess === 1) {
     compChoose('paper');
-    versusText(paper, rock);
+    versusText('paper', 'rock');
     compScore++;
     backChange('red');
     printScore();
   } else if (compGuess === 2) {
     compChoose('scissors');
-    versusText(scissors, rock);
+    versusText('scissors', 'rock');
     playerScore++;
     printScore();
     backChange('green');
   } else {
     compChoose('rock');
-    versusText(rock, rock);
+    versusText('rock', 'rock');
     backChange('grey');
     printScore();
   } checkWinner();
@@ -49,19 +49,19 @@ paper.onclick = () => {
   compGuess = guess();
     if (compGuess === 1) {
     compChoose('scissors');
-    versusText(scissors, paper);
+    versusText('scissors', 'paper');
     backChange('red');
     compScore++;
     printScore();
   } else if (compGuess === 2) {
     compChoose('rock');
-    versusText(rock, paper);
+    versusText('rock', 'paper');
     backChange('green');
     playerScore++;
     printScore();
   } else {
     compChoose('paper');
-    versusText(paper, paper);
+    versusText('paper', 'paper');
     backChange('grey');
     printScore();
   } checkWinner();
@@ -73,19 +73,19 @@ scissors.onclick = () => {
   compGuess = guess();
     if (compGuess === 1) {
     compChoose('rock');
-    versusText(rock, scissors);
+    versusText('rock', 'scissors');
     compScore++;
     printScore();
     backChange('red');
   } else if (compGuess === 2) {
     compChoose('paper');
-    versusText(paper, scissors);
+    versusText('paper', 'scissors');
     backChange('green');
     playerScore++; 
     printScore();
   } else {
     compChoose('scissors');
-    versusText(scissors, scissors);
+    versusText('scissors', 'scissors');
     backChange('grey');
     printScore();
   } checkWinner();
@@ -172,23 +172,23 @@ function playerChoose(choice) {
     }
 
 function versusText(x, y) {
-  if (x === paper && y === rock) {
+  if (x === 'paper' && y === 'rock') {
     return res.textContent = "Paper beats Rock! YOU LOSE!";
-    } else if (x === scissors && y === rock) {
+    } else if (x === 'scissors' && y === 'rock') {
       return res.textContent = "Rock beats Scissors! YOU WIN!";
-    } else if (x === rock && y === rock) {
+    } else if (x === 'rock' && y === 'rock') {
       return res.textContent = "Rock vs. Rock! IT'S A TIE!";
-    } else if (x === scissors && y === paper) {
+    } else if (x === 'scissors' && y === 'paper') {
       return res.textContent = "Scissors beats Paper! YOU LOSE!";
-    } else if (x === rock && y === paper) {
+    } else if (x === 'rock' && y === 'paper') {
       return res.textContent = "Paper beats Rock! YOU WIN!";
-    } else if (x === paper && y === paper) {
+    } else if (x === 'paper' && y === 'paper') {
       return res.textContent = "Paper vs. Paper! IT'S A TIE!";
-    } else if (x === rock && y === scissors) {
+    } else if (x === 'rock' && y === 'scissors') {
       return res.textContent = "Rock beats Scissors! YOU LOSE!";
-    } else if (x === paper && y === scissors) {
+    } else if (x === 'paper' && y === 'scissors') {
       return res.textContent = "Scissors beats Paper! YOU WIN!";
-    } else if (x === scissors && y === scissors) {
+    } else if (x === 'scissors' && y === 'scissors') {
       return res.textContent = "Scissors vs. Scissors! IT'S A TIE!";
     }
   }
