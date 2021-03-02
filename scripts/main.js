@@ -171,26 +171,26 @@ function playerChoose(choice) {
     }
     }
 
-    function versusText(x, y) {
-      if (x === paper && y === rock) {
-        return res.textContent = "Paper beats Rock! YOU LOSE!";
-      } else if (x === scissors && y === rock) {
-        return res.textContent = "Rock beats Scissors! YOU WIN!";
-      } else if (x === rock && y === rock) {
-        return res.textContent = "Rock vs. Rock! IT'S A TIE!";
-      } else if (x === scissors && y === paper) {
-        return res.textContent = "Scissors beats Paper! YOU LOSE!";
-      } else if (x === rock && y === paper) {
-        return res.textContent = "Paper beats Rock! YOU WIN!";
-      } else if (x === paper && y === paper) {
-        return res.textContent = "Paper vs. Paper! IT'S A TIE!";
-      } else if (x === rock && y === scissors) {
-        return res.textContent = "Rock beats Scissors! YOU LOSE!";
-      } else if (x === paper && y === scissors) {
-        return res.textContent = "Scissors beats Paper! YOU WIN!";
-      } else if (x === scissors && y === scissors) {
-        return res.textContent = "Scissors vs. Scissors! IT'S A TIE!";
-      }
+function versusText(x, y) {
+  if (x === paper && y === rock) {
+    return res.textContent = "Paper beats Rock! YOU LOSE!";
+    } else if (x === scissors && y === rock) {
+      return res.textContent = "Rock beats Scissors! YOU WIN!";
+    } else if (x === rock && y === rock) {
+      return res.textContent = "Rock vs. Rock! IT'S A TIE!";
+    } else if (x === scissors && y === paper) {
+      return res.textContent = "Scissors beats Paper! YOU LOSE!";
+    } else if (x === rock && y === paper) {
+      return res.textContent = "Paper beats Rock! YOU WIN!";
+    } else if (x === paper && y === paper) {
+      return res.textContent = "Paper vs. Paper! IT'S A TIE!";
+    } else if (x === rock && y === scissors) {
+      return res.textContent = "Rock beats Scissors! YOU LOSE!";
+    } else if (x === paper && y === scissors) {
+      return res.textContent = "Scissors beats Paper! YOU WIN!";
+    } else if (x === scissors && y === scissors) {
+      return res.textContent = "Scissors vs. Scissors! IT'S A TIE!";
     }
+  }
 
     
