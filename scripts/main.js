@@ -14,7 +14,7 @@ document.getElementById('reset').onclick = () => {
     para.textContent = "CHOOSE YOUR FIGHTER"
     comp.textContent = "";
     res.textContent = "";
-    document.body.style.backgroundColor = "grey";
+    backChange('grey')
     rock = enableButtons();
     paper = enableButtons();
     scissors = enableButtons();
@@ -29,18 +29,18 @@ rock.onclick = () => {
     comp.textContent = "A.I. chooses... PAPER";
     res.textContent = "Paper beats Rock! YOU LOSE!";
     compScore++;
-    document.body.style.backgroundColor = "red";
+    backChange('red')
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } else if (compGuess === 2) {
     comp.textContent = "A.I. chooses... SCISSORS";
     res.textContent = "Rock beats Scissors! YOU WIN!";
     playerScore++;
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
-    document.body.style.backgroundColor = "green";
+    backChange('green')
   } else {
     comp.textContent = "A.I. chooses... ROCK";
     res.textContent = "Rock vs. Rock! IT'S A TIE!";
-    document.body.style.backgroundColor = "grey";
+    backChange('grey')
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } checkWinner();
 }
@@ -53,19 +53,19 @@ paper.onclick = () => {
     if (compGuess === 1) {
     comp.textContent = "A.I. chooses... SCISSORS";
     res.textContent = "Scissors beats Paper! YOU LOSE!";
-    document.body.style.backgroundColor = "red";
+    backChange('red')
     compScore++;
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } else if (compGuess === 2) {
     comp.textContent = "A.I. chooses... ROCK";
     res.textContent = "Paper beats Rock! YOU WIN!";
-    document.body.style.backgroundColor = "green";
+    backChange('green')
     playerScore++;
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } else {
     comp.textContent = "A.I. chooses... PAPER";
     res.textContent = "Paper vs. Paper! IT'S A TIE!";
-    document.body.style.backgroundColor = "grey";
+    backChange('grey')
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } checkWinner();
 }
@@ -80,17 +80,17 @@ scissors.onclick = () => {
     res.textContent = "Rock beats Scissors! YOU LOSE!";
     compScore++;
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
-    document.body.style.backgroundColor = "red";
+    backChange('red')
   } else if (compGuess === 2) {
     comp.textContent = "A.I. chooses... PAPER";
     res.textContent = "Scissors beats Paper! YOU WIN!";
-    document.body.style.backgroundColor = "green";
+    backChange('green')
     playerScore++; 
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } else {
     comp.textContent = "A.I. chooses... SCISSORS";
     res.textContent = "Scissors vs. Scissors! IT'S A TIE!";
-    document.body.style.backgroundColor = "grey";
+    backChange('grey')
     document.getElementById('top-para').textContent = `YOU (${playerScore} : ${compScore}) A.I.`;
   } checkWinner();
 }
@@ -145,4 +145,8 @@ function enableButtons () {
     document.getElementById('rock').disabled=false;
     document.getElementById('paper').disabled=false;
     document.getElementById('scissors').disabled=false;
+}
+
+function backChange (color) {
+   return document.body.style.backgroundColor = color;
 }
