@@ -19,72 +19,72 @@ document.getElementById('reset').onclick = () => {
 // rock button
 rock.onclick = () => {
   playerChoose('rock');
-  aiGuess();
-    if (aiGuess() === 1) {
-    compChoose('paper');
-    versusText('paper', 'rock');
-    compScore++;
-    backChange('red');
-    printScore();
-  } else if (aiGuess() === 2) {
-    compChoose('scissors');
-    versusText('scissors', 'rock');
-    playerScore++;
-    printScore();
-    backChange('green');
-  } else {
-    compChoose('rock');
-    versusText('rock', 'rock');
-    backChange('grey');
-    printScore();
+    aiGuess();
+      if (aiGuess() === 1) {
+        compChoose('paper');
+        versusText('paper', 'rock');
+        compScore++;
+        backChange('red');
+        printScore();
+    } else if (aiGuess() === 2) {
+        compChoose('scissors');
+        versusText('scissors', 'rock');
+        playerScore++;
+        printScore();
+        backChange('green');
+    } else {
+        compChoose('rock');
+        versusText('rock', 'rock');
+        backChange('grey');
+        printScore();
   } checkWinner();
 }
 
 // paper button
 paper.onclick = () => {
   playerChoose('paper');
-  aiGuess();
-    if (aiGuess() === 1) {
-    compChoose('scissors');
-    versusText('scissors', 'paper');
-    backChange('red');
-    compScore++;
-    printScore();
-  } else if (aiGuess() === 2) {
-    compChoose('rock');
-    versusText('rock', 'paper');
-    backChange('green');
-    playerScore++;
-    printScore();
-  } else {
-    compChoose('paper');
-    versusText('paper', 'paper');
-    backChange('grey');
-    printScore();
+    aiGuess();
+      if (aiGuess() === 1) {
+        compChoose('scissors');
+        versusText('scissors', 'paper');
+        backChange('red');
+        compScore++;
+        printScore();
+      } else if (aiGuess() === 2) {
+        compChoose('rock');
+        versusText('rock', 'paper');
+        backChange('green');
+        playerScore++;
+        printScore();
+      } else {
+        compChoose('paper');
+        versusText('paper', 'paper');
+        backChange('grey');
+        printScore();
   } checkWinner();
 }
 
 // scissors button
 scissors.onclick = () => {
   playerChoose('scissors');
-  aiGuess();
-    if (aiGuess() === 1) {
-    compChoose('rock');
-    versusText('rock', 'scissors');
-    compScore++;
-    printScore();
-    backChange('red');
-  } else if (aiGuess() === 2) {
-    compChoose('paper');
-    versusText('paper', 'scissors');
-    backChange('green');
-    playerScore++; 
-    printScore();
-  } else {
-    compChoose('scissors');
-    versusText('scissors', 'scissors');
-    backChange('grey');
-    printScore();
+    aiGuess();
+      if (aiGuess() === 1) {
+        compChoose('rock');
+        versusText('rock', 'scissors');
+        compScore++;
+        printScore();
+        backChange('red');
+      } else if (aiGuess() === 2) {
+        compChoose('paper');
+        versusText('paper', 'scissors');
+        backChange('green');
+        playerScore++; 
+        printScore();
+      } else {
+        compChoose('scissors');
+        versusText('scissors', 'scissors');
+        backChange('grey');
+        printScore();
   } checkWinner();
 }
 
@@ -142,11 +142,11 @@ function printScore () {
 
 function compChoose(choice) {
   if (choice === 'scissors') {
-  return comp.textContent = "A.I. chooses... SCISSORS";
+    return comp.textContent = "A.I. chooses... SCISSORS";
   } else if (choice === 'rock') {
     return comp.textContent = "A.I. chooses... ROCK";
-  } else {
-    comp.textContent = "A.I. chooses... PAPER";
+    } else {
+    return comp.textContent = "A.I. chooses... PAPER";
   }
   }
 
@@ -156,7 +156,7 @@ function playerChoose(choice) {
     } else if (choice === 'rock') {
       return para.textContent = "you choose... ROCK";
     } else {
-      para.textContent = "you choose... PAPER";
+      return para.textContent = "you choose... PAPER";
     }
     }
 
