@@ -7,8 +7,7 @@ let compScore = 0;
 
 // reset button
 document.getElementById('reset').onclick = () => {
-    playerScore = 0;
-    compScore = 0;
+    resetScore();
     printScore();
     para.textContent = "CHOOSE YOUR FIGHTER"
     comp.textContent = "";
@@ -103,24 +102,26 @@ function checkWinner () {
     document.getElementById('para').textContent = "YOU";
     document.getElementById('comp').textContent = "WON";
     document.getElementById('res').textContent = "THE GAME!";
-    playerScore = 0;
-    compScore = 0;
+    resetScore();
     disableButtons();
   } else if (compScore === 5) {
     document.getElementById('para').textContent = "oops..";
     document.getElementById('comp').textContent = "YOU LOST..";
     document.getElementById('res').textContent = "Try Again?";
-    playerScore = 0;
-    compScore = 0;
+    resetScore();
     disableButtons();
   } else if (playerScore === 5 && compScore === 5) {
     document.getElementById('para').textContent = "ITS";
     document.getElementById('comp').textContent = "A";
     document.getElementById('res').textContent = "DRAW?!";
-    playerScore = 0;
-    compScore = 0;
+    resetScore();
     disableButtons();
   }
+}
+
+function resetScore () {
+  playerScore = 0;
+  compScore = 0;
 }
 
 function disableButtons () {
