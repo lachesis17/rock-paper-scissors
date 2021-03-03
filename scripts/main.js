@@ -14,9 +14,7 @@ document.getElementById('reset').onclick = () => {
     comp.textContent = "";
     res.textContent = "";
     backChange('grey');
-    rock = enableButtons();
-    paper = enableButtons();
-    scissors = enableButtons();
+    enableButtons();
 }
 
 // rock button
@@ -107,40 +105,34 @@ function checkWinner () {
     document.getElementById('res').textContent = "THE GAME!";
     playerScore = 0;
     compScore = 0;
-    rock = disableButtons();
-    paper = disableButtons();
-    scissors = disableButtons();
+    disableButtons();
   } else if (compScore === 5) {
     document.getElementById('para').textContent = "oops..";
     document.getElementById('comp').textContent = "YOU LOST..";
     document.getElementById('res').textContent = "Try Again?";
     playerScore = 0;
     compScore = 0;
-    rock = disableButtons();
-    paper = disableButtons();
-    scissors = disableButtons();
+    disableButtons();
   } else if (playerScore === 5 && compScore === 5) {
     document.getElementById('para').textContent = "ITS";
     document.getElementById('comp').textContent = "A";
     document.getElementById('res').textContent = "DRAW?!";
     playerScore = 0;
     compScore = 0;
-    rock = disableButtons();
-    paper = disableButtons();
-    scissors = disableButtons();
+    disableButtons();
   }
 }
 
 function disableButtons () {
-    document.getElementById('rock').disabled=true;
-    document.getElementById('paper').disabled=true;
-    document.getElementById('scissors').disabled=true;
+    rock.disabled=true;
+    paper.disabled=true;
+    scissors.disabled=true;
 }
 
 function enableButtons () {
-    document.getElementById('rock').disabled=false;
-    document.getElementById('paper').disabled=false;
-    document.getElementById('scissors').disabled=false;
+    rock.disabled=false;
+    paper.disabled=false;
+    scissors.disabled=false;
 }
 
 function backChange (color) {
@@ -192,5 +184,3 @@ function versusText(x, y) {
       return res.textContent = "Scissors vs. Scissors! IT'S A TIE!";
     }
   }
-
-    
