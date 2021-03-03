@@ -19,14 +19,14 @@ document.getElementById('reset').onclick = () => {
 // rock button
 rock.onclick = () => {
   playerChoose('rock');
-  compGuess = guess();
-    if (compGuess === 1) {
+  aiGuess();
+    if (aiGuess() === 1) {
     compChoose('paper');
     versusText('paper', 'rock');
     compScore++;
     backChange('red');
     printScore();
-  } else if (compGuess === 2) {
+  } else if (aiGuess() === 2) {
     compChoose('scissors');
     versusText('scissors', 'rock');
     playerScore++;
@@ -43,14 +43,14 @@ rock.onclick = () => {
 // paper button
 paper.onclick = () => {
   playerChoose('paper');
-  compGuess = guess();
-    if (compGuess === 1) {
+  aiGuess();
+    if (aiGuess() === 1) {
     compChoose('scissors');
     versusText('scissors', 'paper');
     backChange('red');
     compScore++;
     printScore();
-  } else if (compGuess === 2) {
+  } else if (aiGuess() === 2) {
     compChoose('rock');
     versusText('rock', 'paper');
     backChange('green');
@@ -67,14 +67,14 @@ paper.onclick = () => {
 // scissors button
 scissors.onclick = () => {
   playerChoose('scissors');
-  compGuess = guess();
-    if (compGuess === 1) {
+  aiGuess();
+    if (aiGuess() === 1) {
     compChoose('rock');
     versusText('rock', 'scissors');
     compScore++;
     printScore();
     backChange('red');
-  } else if (compGuess === 2) {
+  } else if (aiGuess() === 2) {
     compChoose('paper');
     versusText('paper', 'scissors');
     backChange('green');
@@ -89,12 +89,8 @@ scissors.onclick = () => {
 }
 
 // functions
-function guess () {
+function aiGuess () {
   return Math.floor((Math.random() * 3) + 1);
-}
-
-let compGuess = () => {
-    console.log(guess());
 }
   
 function checkWinner () {
